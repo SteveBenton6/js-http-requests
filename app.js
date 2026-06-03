@@ -4,9 +4,35 @@ console.log("\nSECTION 1 - Intro to AJAX");
 
 // Example 2 -  JSON & XML
 console.log("\nSECTION 2 - JSON & XML");
+// No Code
 
 // Example 3 -  XMLHttpRequests: The Basics
 console.log("\nSECTION 3 - XMLHttpRequests: The Basics");
+
+const myReq = new XMLHttpRequest();
+myReq.addEventListener("load", function () {
+  const data = JSON.parse(this.responseText);
+  console.log(data);
+  console.log(`Joke: ${data.joke}`);
+});
+myReq.addEventListener("error", function (err) {
+  console.log("Error", err);
+});
+myReq.open("GET", "https://icanhazdadjoke.com/", true);
+myReq.setRequestHeader("Accept", "application/json");
+myReq.send();
+
+//const firstReq = new XMLHttpRequest();
+//firstReq.addEventListener("load", () => {
+//  console.log("It Worked!");
+//});
+//firstReq.addEventListener("error", () => {
+//  console.log("Error!");
+//});
+//firstReq.open("GET", "http://swapi.dev/api/planets", true);
+//firstReq.setRequestHeader("Accept", "application/json");
+//firstReq.send();
+//console.log("Request Sent!");
 
 // Example 4 -  XMLHttpRequests: Chaining Requests
 console.log("\nSECTION 5 - XMLHttpRequests: Chaining Requests");
