@@ -36,9 +36,27 @@ myReq.send();
 
 // Example 4 -  XMLHttpRequests: Chaining Requests
 console.log("\nSECTION 5 - XMLHttpRequests: Chaining Requests");
+// No Code
+// API Not Working
 
 // Example 5 -  A Better Way: Fetch!
 console.log("\nSECTION 6 - A Better Way: Fetch!");
+
+fetch("https://icanhazdadjoke.com/", {
+  headers: {
+    Accept: "application/json",
+  },
+})
+  .then((response) => {
+    if (response.ok)
+      response.json().then((data) => {
+        console.log(data);
+      });
+  })
+  .catch((err) => {
+    console.log("Something went wrong with Fetch!");
+    console.log(err);
+  });
 
 // Example 6 -  Chaining Fetch Requests
 console.log("\nSECTION 6 - Chaining Fetch Requests");
