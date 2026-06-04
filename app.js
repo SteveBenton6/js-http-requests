@@ -60,12 +60,25 @@ fetch("https://icanhazdadjoke.com/", {
 
 // Example 6 -  Chaining Fetch Requests
 console.log("\nSECTION 6 - Chaining Fetch Requests");
+// No Code
+// API Not Working
 
 // Example 7 -  Refactoring Fetch Chains
 console.log("\nSECTION 7 - Refactoring Fetch Chains");
+// No Code
+// API Not Working
 
 // Example 8 -  An Even Better Way: Axios
 console.log("\nSECTION 8 - An Even Better Way: Axios");
+axios
+  .get("https://swapi.info/api/planets")
+  .then((res) => {
+    console.log(res.data);
+  })
+  .catch((err) => {
+    console.log("In Catch Callback!!");
+    console.log(err);
+  });
 
 // Example 9 -  Sequential Axios Requests
 console.log("\nSECTION 9 - Sequential Axios Requests");
