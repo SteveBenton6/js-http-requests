@@ -82,3 +82,14 @@ axios
 
 // Example 9 -  Sequential Axios Requests
 console.log("\nSECTION 9 - Sequential Axios Requests");
+
+axios
+  .get("https://swapi.info/api/films")
+  .then(({ data }) => {
+    console.log(data);
+    for (let film of data) console.log(film.title);
+  })
+  .catch((err) => {
+    console.log("In Catch Callback!!");
+    console.log(err);
+  });
